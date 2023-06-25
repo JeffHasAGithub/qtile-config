@@ -130,44 +130,7 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 screens = [
-    Screen(top=bar.Bar(
-        [
-            widget.CurrentLayoutIcon(),
-            widget.GroupBox(this_current_screen_border="#81A1C1"),
-            widget.Sep(foreground="#81A1C1", size_percent=60),
-            widget.Prompt(),
-            widget.WindowName(format=" {name} "),
-            widget.Chord(
-                chords_colors={
-                    "launch": ("#ff0000", "#ffffff"),
-                },
-                name_transform=lambda name: name.upper(),
-            ),
-            widget.Sep(foreground="#81A1C1", size_percent=60),
-            widget.TextBox(" CPU"),
-            widget.CPUGraph(graph_color="#81A1C1", fill_color="#81A1C1"),
-            widget.Sep(foreground="#81A1C1", size_percent=60),
-            widget.TextBox(" Memory"),
-            widget.MemoryGraph(graph_color="#81A1C1", fill_color="#81A1C1"),
-            widget.Sep(foreground="#81A1C1", size_percent=60),
-            widget.PulseVolume(emoji=True, fmt=" {}"),
-            widget.GenPollText(update_interval=1,
-                               func=lambda:
-                               f"{subprocess.check_output('/home/jeff/python/volume.py').decode().strip():>4} "),
-            widget.Sep(foreground="#81A1C1", size_percent=60),
-            widget.Battery(format=" 🔋 {percent:>4.0%} ", show_short_text=False),
-            widget.Sep(foreground="#81A1C1", size_percent=60),
-            widget.Wlan(interface="wlp2s0", format=" 🛜  {essid} "),
-            widget.Sep(foreground="#81A1C1", size_percent=60),
-            widget.OpenWeather(location="Dallas", format=" {icon}"),
-            widget.Clock(format=" %m/%d/%y %a %I:%M %p "),
-        ],
-        32,
-        fontsize=16,
-        foreground="#EEEEEE",
-        background="#2E3440",
-        margin=[0, 0, 1, 0],
-    ), ),
+    Screen()
 ]
 
 # Drag floating layouts.
